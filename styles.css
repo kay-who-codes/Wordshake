@@ -1,0 +1,113 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #fff;
+    --primary-color: cyan;
+    --secondary-color: #3700b3;
+    --tile-bg: #1e1e1e;
+    --tile-border: #333;
+	--game-letters: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+#game-container {
+    position: relative;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+    transition: opacity 0.3s ease;
+}
+
+.tile {
+    background-color: var(--tile-bg);
+    border: 1px solid var(--tile-border);
+    border-radius: 8px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--game-letters);
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+    background-color: #2a2a2a;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    margin: 10px auto;
+    display: block;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #9a67ea;
+}
+
+.hidden {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.visible {
+    opacity: 1;
+    display: block;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
